@@ -34,16 +34,50 @@ const featured = featuredTestimonial
   ? TESTIMONIALS.filter(t => t.key === featuredTestimonial).slice(0, 1)
   : TESTIMONIALS.filter(t => t.conditions.includes(entry.slug)).slice(0, 2)
 
+const allServices = await getCollection('services')
+const serviceMap = Object.fromEntries(
+  allServices.map(s => [s.slug, { label: s.data.title, description: s.data.description }])
+)
+
 const getServiceLabel = (slug: string) =>
-  ALL_SERVICES.find(s => s.href.includes(slug))?.label ?? slug
+  serviceMap[slug]?.label ?? ALL_SERVICES.find(s => s.href.includes(slug))?.label ?? slug
+
+const getServiceDescription = (slug: string) =>
+  serviceMap[slug]?.description ?? ''
 
 const getServiceHref = (slug: string) =>
   ALL_SERVICES.find(s => s.href.includes(slug))?.href ?? `/services/${slug}/`
+
+import { SITE } from '../../data/site'
+const pageUrl = `${SITE.url}/help/${entry.slug}/`
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: title,
+    provider: { '@type': 'Person', name: SITE.practitioner },
+    areaServed: 'Canada',
+    serviceType: 'Holistic Health',
+    description: metaDescription ?? description,
+    url: pageUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: 'I Need Help With…', item: SITE.url + '/help/' },
+      { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+    ],
+  },
+]
 ---
 
 <BaseLayout
   title={metaTitle ?? title}
   description={metaDescription ?? description}
+  schema={schemas}
 >
   <!-- Hero -->
   <section class="bg-cream-200 py-14 lg:py-20">
@@ -76,13 +110,16 @@ const getServiceHref = (slug: string) =>
       <div class="space-y-5 mb-10">
         {primaryServices.map(slug => (
           <div class="bg-white rounded-xl p-6 shadow-sm border border-cream-200">
-            <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-1">
+            <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-2">
               <a href={getServiceHref(slug)} class="hover:text-sage-500 transition-colors">
                 {getServiceLabel(slug)}
               </a>
             </h3>
+            {getServiceDescription(slug) && (
+              <p class="text-charcoal-600 text-sm leading-relaxed mb-3">{getServiceDescription(slug)}</p>
+            )}
             <a href={getServiceHref(slug)} class="text-sm text-sage-500 hover:underline font-medium">
-              Learn about this approach →
+              Learn more →
             </a>
           </div>
         ))}

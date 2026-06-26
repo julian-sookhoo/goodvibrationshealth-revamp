@@ -1,6 +1,7 @@
 ---
 import { SITE } from '../../data/site'
 import { NAV_SERVICES, NAV_HELP } from '../../data/navigation'
+const path = Astro.url.pathname
 ---
 
 <header class="sticky top-0 z-50 bg-cream-100/95 backdrop-blur-sm border-b border-charcoal-200">
@@ -17,8 +18,8 @@ import { NAV_SERVICES, NAV_HELP } from '../../data/navigation'
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
 
-        <a href="/" class="px-3 py-2 text-sm font-medium text-charcoal-700 hover:text-sage-500 rounded-md hover:bg-sage-50 transition-colors">Home</a>
-        <a href="/about/" class="px-3 py-2 text-sm font-medium text-charcoal-700 hover:text-sage-500 rounded-md hover:bg-sage-50 transition-colors">About</a>
+        <a href="/" aria-current={path === '/' ? 'page' : undefined} class="px-3 py-2 text-sm font-medium text-charcoal-700 hover:text-sage-500 aria-[current=page]:text-sage-500 rounded-md hover:bg-sage-50 transition-colors">Home</a>
+        <a href="/about/" aria-current={path.startsWith('/about') ? 'page' : undefined} class="px-3 py-2 text-sm font-medium text-charcoal-700 hover:text-sage-500 aria-[current=page]:text-sage-500 rounded-md hover:bg-sage-50 transition-colors">About</a>
 
         <!-- Services dropdown -->
         <div class="relative group">
@@ -31,7 +32,7 @@ import { NAV_SERVICES, NAV_HELP } from '../../data/navigation'
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="absolute left-0 top-full pt-1 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+          <div class="absolute left-0 top-full pt-1 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-150 z-50">
             <div class="bg-white rounded-xl shadow-lg border border-charcoal-200 py-3">
               <a href="/services/" class="block px-4 py-2 text-sm font-semibold text-sage-500 hover:bg-sage-50 transition-colors">
                 All Services →
@@ -62,7 +63,7 @@ import { NAV_SERVICES, NAV_HELP } from '../../data/navigation'
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="absolute left-0 top-full pt-1 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+          <div class="absolute left-0 top-full pt-1 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-150 z-50">
             <div class="bg-white rounded-xl shadow-lg border border-charcoal-200 py-3">
               {NAV_HELP.map(item => (
                 <a href={item.href} class="block px-4 py-2 text-sm text-charcoal-700 hover:text-sage-500 hover:bg-sage-50 transition-colors">

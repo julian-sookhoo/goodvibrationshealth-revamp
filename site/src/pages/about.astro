@@ -3,6 +3,32 @@ import BaseLayout from '../components/layout/BaseLayout.astro'
 import CTABanner from '../components/sections/CTABanner.astro'
 import PlaceholderImage from '../components/ui/PlaceholderImage.astro'
 import BookingCTA from '../components/ui/BookingCTA.astro'
+import { SITE } from '../data/site'
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.practitioner,
+  jobTitle: 'Holistic Health Practitioner',
+  url: `${SITE.url}/about/`,
+  telephone: `+${SITE.phone.replace(/[^0-9]/g, '')}`,
+  email: SITE.email,
+  worksFor: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  description: 'Fern Wolf has been helping people reclaim their health, break limiting patterns, and live with more ease since 1999. 15 certifications, trained by the founders of TFT, HADO & Psych-K.',
+  hasCredential: [
+    'Certified Hypnotist — National Guild of Hypnotists',
+    'TFT Advanced Tapping Facilitator & Instructor (cert. 2013)',
+    'Psych-K Advanced Practitioner (Basic & Advanced, 2005)',
+    'Certified NLP Practitioner',
+    'Mindscaping Specialist — trained by Mike Mandel',
+    'Hado Instructor — trained by Dr. Masaru Emoto',
+    'Source Energy Medicine Practitioner — Canadian Representative',
+  ],
+  knowsAbout: [
+    'Thought Field Therapy', 'Hypnosis', 'Psych-K', 'NLP',
+    'Mindscaping', 'Life Coaching', 'Source Energy Medicine', 'HADO',
+  ],
+}
 
 const credentials = [
   { cert: 'Certified Hypnotist', body: 'National Guild of Hypnotists' },
@@ -26,6 +52,7 @@ const credentials = [
 <BaseLayout
   title="About Fern Wolf — Holistic Health Practitioner"
   description="Fern Wolf has helped clients across Canada reclaim their health since 1999. 15 certifications, trained by the founders of TFT, HADO & Psych-K. Virtual sessions Canada-wide."
+  schema={personSchema}
 >
   <!-- Hero -->
   <section class="bg-cream-200 py-14 lg:py-20">
