@@ -116,10 +116,11 @@ const path = Astro.url.pathname
     </div>
   </div>
 
-  <!-- Mobile menu — compact, scrollable, locks body scroll when open -->
+  <!-- Mobile menu — compact, height-constrained, scrolls independently -->
   <div
     id="mobile-menu"
-    class="hidden lg:hidden fixed inset-x-0 top-[4rem] bottom-0 z-40 bg-cream-100 overflow-y-auto border-t border-charcoal-200"
+    class="hidden lg:hidden bg-cream-100 border-t border-charcoal-200 overflow-y-auto"
+    style="max-height: calc(100vh - 4rem)"
   >
     <nav class="container-content py-5 space-y-1" aria-label="Mobile navigation">
 
@@ -181,13 +182,7 @@ const path = Astro.url.pathname
     iconOpen?.classList.toggle('hidden', open)
     iconClose?.classList.toggle('hidden', !open)
     btn?.setAttribute('aria-expanded', String(open))
-    // Lock/unlock body scroll
     document.body.style.overflow = open ? 'hidden' : ''
-    // Keep the menu top aligned to the header bottom
-    if (menu) {
-      const header = document.querySelector('header')
-      menu.style.top = header ? `${header.offsetHeight}px` : '4rem'
-    }
   }
 
   btn?.addEventListener('click', () => {
