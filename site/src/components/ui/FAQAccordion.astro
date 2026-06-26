@@ -1,0 +1,25 @@
+---
+interface FAQItem {
+  q: string
+  a: string
+}
+
+interface Props {
+  items: FAQItem[]
+  class?: string
+}
+
+const { items, class: className } = Astro.props
+---
+
+<div class={`divide-y divide-charcoal-200 ${className ?? ''}`}>
+  {items.map(item => (
+    <details class="group py-4">
+      <summary class="flex justify-between items-start cursor-pointer list-none gap-4 font-semibold text-charcoal-900 hover:text-sage-500 transition-colors">
+        <span>{item.q}</span>
+        <span class="text-sage-400 text-xl leading-none shrink-0 mt-0.5 group-open:rotate-45 transition-transform duration-200">+</span>
+      </summary>
+      <p class="mt-3 text-charcoal-700 leading-relaxed pr-8">{item.a}</p>
+    </details>
+  ))}
+</div>

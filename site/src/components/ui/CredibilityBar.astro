@@ -1,0 +1,19 @@
+---
+const signals = [
+  '25+ years in practice',
+  '15 certifications',
+  'Trained by founders of TFT, HADO & Psych-K',
+  'Virtual sessions · Canada-wide',
+]
+---
+
+<div class="border-y border-cream-300 py-4 my-6">
+  <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+    {signals.map((signal, i) => (
+      <>
+        <span class="text-sm text-charcoal-500">{signal}</span>
+        {i < signals.length - 1 && <span class="text-charcoal-200 hidden sm:inline">·</span>}
+      </>
+    ))}
+  </div>
+</div>

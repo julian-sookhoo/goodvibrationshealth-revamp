@@ -1,0 +1,107 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 301 Redirects — old URLs to new structure
+
+[[redirects]]
+  from = "/hypnotist/"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/holistic-therapy-services/"
+  to = "/services/"
+  status = 301
+
+[[redirects]]
+  from = "/natural-wellness-speaker/"
+  to = "/training/"
+  status = 301
+
+[[redirects]]
+  from = "/training-speaking/"
+  to = "/training/"
+  status = 301
+
+[[redirects]]
+  from = "/fern-wolf-reviews/"
+  to = "/testimonials/"
+  status = 301
+
+[[redirects]]
+  from = "/gratitude-2/"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/contact-fern-wolf/"
+  to = "/book/"
+  status = 301
+
+[[redirects]]
+  from = "/hypnosis-therapy/"
+  to = "/services/hypnosis/"
+  status = 301
+
+[[redirects]]
+  from = "/holistic-life-coaching/"
+  to = "/services/life-coaching/"
+  status = 301
+
+[[redirects]]
+  from = "/neuro-linguistic-programming/"
+  to = "/services/nlp/"
+  status = 301
+
+[[redirects]]
+  from = "/wave-quantum-hydration/"
+  to = "/services/wave/"
+  status = 301
+
+[[redirects]]
+  from = "/bio-well/"
+  to = "/services/bio-well/"
+  status = 301
+
+[[redirects]]
+  from = "/thought-field-therapy/"
+  to = "/services/thought-field-therapy/"
+  status = 301
+
+[[redirects]]
+  from = "/hado/"
+  to = "/services/hado/"
+  status = 301
+
+[[redirects]]
+  from = "/mindscaping/"
+  to = "/services/mindscaping/"
+  status = 301
+
+[[redirects]]
+  from = "/psych-k/"
+  to = "/services/psych-k/"
+  status = 301
+
+[[redirects]]
+  from = "/source-energy-medicine/"
+  to = "/services/source-energy-medicine/"
+  status = 301
+
+# Fallback: Astro handles 404
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404

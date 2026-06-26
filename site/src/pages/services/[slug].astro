@@ -1,0 +1,137 @@
+---
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import BaseLayout from '../../components/layout/BaseLayout.astro'
+import PricingBlock from '../../components/ui/PricingBlock.astro'
+import BookingCTA from '../../components/ui/BookingCTA.astro'
+import FAQAccordion from '../../components/ui/FAQAccordion.astro'
+import TestimonialCard from '../../components/ui/TestimonialCard.astro'
+import CTABanner from '../../components/sections/CTABanner.astro'
+import { TESTIMONIALS } from '../../data/testimonials'
+import { SITE } from '../../data/site'
+
+export async function getStaticPaths() {
+  const services = await getCollection('services')
+  return services.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+type Props = { entry: CollectionEntry<'services'> }
+const { entry } = Astro.props
+const { Content } = await entry.render()
+const { title, headline, description, isBookable, faqs, metaTitle, metaDescription } = entry.data
+
+const pageTestimonials = TESTIMONIALS.filter(t => t.services.includes(entry.slug)).slice(0, 2)
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  provider: {
+    '@type': 'Person',
+    name: SITE.practitioner,
+  },
+  areaServed: 'Canada',
+  serviceType: title,
+  description,
+}
+
+const faqSchema = faqs && faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+} : null
+
+const schemas = faqSchema ? [serviceSchema, faqSchema] : serviceSchema
+---
+
+<BaseLayout
+  title={metaTitle ?? title}
+  description={metaDescription ?? description}
+  schema={schemas}
+>
+
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <p class="text-sm font-semibold text-sage-500 uppercase tracking-wider mb-3">
+        <a href="/services/" class="hover:underline">Services</a> / {title}
+      </p>
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 leading-tight">
+        {headline}
+      </h1>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="bg-cream-100 py-12 lg:py-16">
+    <div class="container-content max-w-narrow">
+      <div class="prose-gv">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (if any) -->
+  {pageTestimonials.length > 0 && (
+    <section class="bg-cream-200 py-12 lg:py-16">
+      <div class="container-content max-w-narrow">
+        <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-8">What clients say</h2>
+        <div class="space-y-5">
+          {pageTestimonials.map(t => (
+            <TestimonialCard
+              quote={t.quote}
+              name={t.name}
+              location={t.location}
+              result={t.result}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Pricing + booking (bookable services) -->
+  {isBookable && (
+    <section class="bg-cream-100 py-12 lg:py-16">
+      <div class="container-content max-w-narrow">
+        <PricingBlock />
+      </div>
+    </section>
+  )}
+
+  <!-- Bio-Well / non-bookable services: show discovery CTA anyway -->
+  {!isBookable && entry.slug !== 'wave' && (
+    <section class="bg-cream-100 py-12 lg:py-16">
+      <div class="container-content max-w-narrow">
+        <div class="bg-cream-200 rounded-xl p-6 lg:p-8 border border-cream-300">
+          <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-3">
+            Have questions? Fern is happy to help.
+          </h3>
+          <p class="text-charcoal-700 text-sm mb-4">
+            Book a free 30-minute discovery call — no commitment required.
+          </p>
+          <BookingCTA label="Book a Free Discovery Call" eventType="discovery" />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  {faqs && faqs.length > 0 && (
+    <section class="bg-cream-200 py-12 lg:py-16">
+      <div class="container-content max-w-narrow">
+        <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-8">Frequently asked questions</h2>
+        <FAQAccordion items={faqs} />
+      </div>
+    </section>
+  )}
+
+  <CTABanner />
+</BaseLayout>

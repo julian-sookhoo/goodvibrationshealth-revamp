@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro'
+import TestimonialCard from '../components/ui/TestimonialCard.astro'
+import Disclaimer from '../components/ui/Disclaimer.astro'
+import CTABanner from '../components/sections/CTABanner.astro'
+import { TESTIMONIALS } from '../data/testimonials'
+
+const groups = [
+  {
+    label: 'Physical Pain',
+    keys: ['stella-eyers', 'louise-todd', 'diana-b', 'louise-t', 'camera-layden-tapp'],
+  },
+  {
+    label: 'Mental & Emotional Wellbeing',
+    keys: ['f-donohoe', 'michele-m'],
+  },
+  {
+    label: 'Beliefs, Habits & Healing',
+    keys: ['linda-m'],
+  },
+  {
+    label: 'Training & Courses',
+    keys: ['lynda', 'meaghan-s'],
+  },
+  {
+    label: 'Professional Endorsements',
+    keys: ['mandie-crawford'],
+  },
+]
+
+const byKey = Object.fromEntries(TESTIMONIALS.map(t => [t.key, t]))
+---
+
+<BaseLayout
+  title="Client Results — Good Vibrations Health"
+  description="Real client outcomes: chronic pain resolved, sleep restored, fears eliminated. See what's possible with holistic therapy with Fern Wolf. Virtual sessions across Canada."
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content text-center max-w-narrow">
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 mb-4">Real people. Real results.</h1>
+      <p class="text-lg text-charcoal-700">Don't take my word for it. Here's what clients have experienced.</p>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="bg-cream-100 pt-10 pb-0">
+    <div class="container-content max-w-narrow">
+      <div class="bg-cream-200 rounded-xl p-5 border-l-4 border-sage-300">
+        <Disclaimer />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial groups -->
+  {groups.map((group, i) => {
+    const testimonials = group.keys.map(k => byKey[k]).filter(Boolean)
+    if (!testimonials.length) return null
+    return (
+      <section class={`${i % 2 === 0 ? 'bg-cream-100' : 'bg-cream-200'} py-14 lg:py-20`}>
+        <div class="container-content">
+          <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-8">{group.label}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {testimonials.map(t => (
+              <TestimonialCard
+                quote={t.quote}
+                name={t.name}
+                location={t.location}
+                result={t.result}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  })}
+
+  <CTABanner
+    heading="Ready to write your own story?"
+    body="Book a session and experience what these clients have."
+  />
+</BaseLayout>

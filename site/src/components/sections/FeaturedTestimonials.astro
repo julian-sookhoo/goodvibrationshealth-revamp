@@ -1,0 +1,37 @@
+---
+import TestimonialCard from '../ui/TestimonialCard.astro'
+import Disclaimer from '../ui/Disclaimer.astro'
+import { TESTIMONIALS } from '../../data/testimonials'
+
+const featured = TESTIMONIALS.filter(t => t.featured).slice(0, 3)
+---
+
+<section class="bg-cream-200 section-pad">
+  <div class="container-content">
+    <div class="text-center mb-12">
+      <h2 class="font-heading font-semibold text-3xl lg:text-4xl text-charcoal-900 mb-3">
+        Real people. Real results.
+      </h2>
+      <p class="text-charcoal-500">Don't take my word for it.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      {featured.map(t => (
+        <TestimonialCard
+          quote={t.quote}
+          name={t.name}
+          location={t.location}
+          result={t.result}
+        />
+      ))}
+    </div>
+
+    <div class="text-center mb-4">
+      <a href="/testimonials/" class="text-sage-500 hover:text-sage-600 text-sm font-medium underline">
+        Read more client stories →
+      </a>
+    </div>
+
+    <Disclaimer class="text-center max-w-2xl mx-auto" />
+  </div>
+</section>

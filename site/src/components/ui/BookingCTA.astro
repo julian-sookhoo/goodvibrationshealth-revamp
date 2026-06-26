@@ -1,0 +1,52 @@
+---
+/**
+ * CALENDLY PLACEHOLDER
+ * Currently renders a mailto: link.
+ *
+ * TO SWAP IN CALENDLY:
+ * 1. Add Calendly CSS/JS to BaseLayout.astro <head>
+ * 2. Replace the <a> tag below with:
+ *    <a href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URLS[eventType]}); return false;">
+ * 3. Set CALENDLY_URLS to Fern's actual Calendly event URLs
+ */
+
+interface Props {
+  eventType?: 'discovery' | 'paid-30' | 'paid-60'
+  label?: string
+  variant?: 'primary' | 'secondary'
+  size?: 'md' | 'lg'
+  class?: string
+}
+
+const {
+  eventType = 'discovery',
+  label = 'Book a Free 30-Minute Discovery Call',
+  variant = 'primary',
+  size = 'lg',
+  class: className,
+} = Astro.props
+
+const EMAIL = 'fernmwolf@gmail.com'
+
+const SUBJECTS = {
+  discovery:  'Free 30-Minute Discovery Call Request',
+  'paid-30':  'Appointment Request – 30-Minute Session',
+  'paid-60':  'Appointment Request – 60-Minute Session',
+}
+
+const href = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECTS[eventType])}`
+
+const sizeClass = size === 'lg' ? 'px-8 py-4 text-base' : 'px-6 py-3 text-sm'
+
+const variantClass = variant === 'primary'
+  ? 'bg-sage-400 hover:bg-sage-500 text-white'
+  : 'bg-terra-400 hover:bg-terra-500 text-white'
+---
+
+<!-- CALENDLY SWAP POINT: replace <a> tag below when Calendly is ready -->
+<a
+  href={href}
+  class={`inline-flex items-center justify-center font-semibold rounded-lg transition-colors duration-200 ${sizeClass} ${variantClass} ${className ?? ''}`}
+>
+  {label}
+</a>

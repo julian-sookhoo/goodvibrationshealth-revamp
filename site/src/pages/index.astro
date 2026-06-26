@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro'
+import Hero from '../components/sections/Hero.astro'
+import IsThisYou from '../components/sections/IsThisYou.astro'
+import HowItWorks from '../components/sections/HowItWorks.astro'
+import FeaturedTestimonials from '../components/sections/FeaturedTestimonials.astro'
+import MeetFern from '../components/sections/MeetFern.astro'
+import ServiceCategories from '../components/sections/ServiceCategories.astro'
+import CTABanner from '../components/sections/CTABanner.astro'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Good Vibrations Health',
+  url: 'https://goodvibrationshealth.ca',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://goodvibrationshealth.ca/help/',
+  },
+}
+---
+
+<BaseLayout
+  title="Feel Better. Think Clearer. Live With Less Pain."
+  description="Virtual holistic health services across Canada. TFT tapping, hypnosis, life coaching, NLP & more with Fern Wolf — 25+ years, 15 certifications. Book a free discovery call."
+  schema={schema}
+>
+  <Hero />
+  <IsThisYou />
+  <HowItWorks />
+  <FeaturedTestimonials />
+  <MeetFern />
+  <ServiceCategories />
+  <CTABanner />
+</BaseLayout>

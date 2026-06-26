@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string
+  description: string
+  href: string
+  class?: string
+}
+
+const { title, description, href, class: className } = Astro.props
+---
+
+<a
+  href={href}
+  class={`block bg-white hover:bg-sage-50 rounded-xl p-6 shadow-sm hover:shadow-md border border-cream-200 transition-all duration-200 group ${className ?? ''}`}
+>
+  <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-2 group-hover:text-sage-500 transition-colors">{title}</h3>
+  <p class="text-charcoal-500 text-sm leading-relaxed italic mb-3">{description}</p>
+  <span class="text-sm font-semibold text-sage-500 group-hover:underline">Get help →</span>
+</a>

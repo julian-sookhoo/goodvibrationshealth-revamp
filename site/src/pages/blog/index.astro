@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../components/layout/BaseLayout.astro'
+import CTABanner from '../../components/sections/CTABanner.astro'
+import BookingCTA from '../../components/ui/BookingCTA.astro'
+
+const posts = await getCollection('blog')
+const hasPosts = posts.length > 0
+---
+
+<BaseLayout
+  title="Blog — Good Vibrations Health"
+  description="Articles on holistic health, TFT tapping, hypnosis, Psych-K, and natural approaches to wellness by Fern Wolf. Virtual sessions across Canada."
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 mb-4">From the blog</h1>
+      <p class="text-lg text-charcoal-700">Insights on holistic health, natural healing, and living well — from 25+ years in practice.</p>
+    </div>
+  </section>
+
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      {hasPosts ? (
+        <div class="space-y-8">
+          {posts.map(post => (
+            <article class="bg-cream-200 rounded-xl p-6 border border-cream-300">
+              <time class="text-xs text-charcoal-500 uppercase tracking-wider">{post.data.date.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+              <h2 class="font-heading font-semibold text-xl text-charcoal-900 mt-2 mb-2">
+                <a href={`/blog/${post.slug}/`} class="hover:text-sage-500 transition-colors">{post.data.title}</a>
+              </h2>
+              <p class="text-charcoal-700 text-sm leading-relaxed mb-3">{post.data.excerpt}</p>
+              <a href={`/blog/${post.slug}/`} class="text-sm font-semibold text-sage-500 hover:underline">Read more →</a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <div class="w-16 h-16 rounded-full bg-sage-100 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+          </div>
+          <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-3">Posts coming soon</h2>
+          <p class="text-charcoal-500 mb-8 max-w-md mx-auto">
+            Articles on holistic health, healing, and natural wellness are in the works. In the meantime, book a free discovery call to get started.
+          </p>
+          <BookingCTA label="Book a Free Discovery Call" />
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

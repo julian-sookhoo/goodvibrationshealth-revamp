@@ -1,0 +1,41 @@
+---
+import BookingCTA from './BookingCTA.astro'
+
+interface Props {
+  showDiscovery?: boolean
+  discoveryNote?: string
+  label?: string
+}
+
+const {
+  showDiscovery = true,
+  discoveryNote = 'Free 30-minute discovery call for all new clients — no commitment required.',
+  label = 'Book a Free 30-Minute Discovery Call',
+} = Astro.props
+---
+
+<div class="bg-cream-200 rounded-xl p-6 lg:p-8 border border-cream-300 space-y-3">
+  <h3 class="font-heading font-semibold text-lg text-charcoal-900">Session Pricing</h3>
+  <div class="flex flex-wrap gap-4">
+    <div class="bg-white rounded-lg px-4 py-3 shadow-sm">
+      <div class="text-xs text-charcoal-500 mb-0.5">30 minutes</div>
+      <div class="font-semibold text-charcoal-900">$60 <span class="text-charcoal-500 text-sm font-normal">CAD</span></div>
+    </div>
+    <div class="bg-white rounded-lg px-4 py-3 shadow-sm">
+      <div class="text-xs text-charcoal-500 mb-0.5">60 minutes</div>
+      <div class="font-semibold text-charcoal-900">$110 <span class="text-charcoal-500 text-sm font-normal">CAD</span></div>
+    </div>
+  </div>
+  <p class="text-sm text-charcoal-700">
+    Your first paid session includes a complimentary extra 15 minutes.
+  </p>
+  {showDiscovery && (
+    <p class="text-sm text-charcoal-500 italic">{discoveryNote}</p>
+  )}
+  <p class="text-sm text-charcoal-500 italic">
+    If cost is a concern, please reach out — nobody is turned away.
+  </p>
+  <div class="pt-2">
+    <BookingCTA {label} />
+  </div>
+</div>

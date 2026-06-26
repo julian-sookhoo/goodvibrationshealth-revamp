@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../components/layout/BaseLayout.astro'
+import CTABanner from '../../components/sections/CTABanner.astro'
+import BookingCTA from '../../components/ui/BookingCTA.astro'
+import PricingBlock from '../../components/ui/PricingBlock.astro'
+
+const allServices = await getCollection('services')
+
+const categories = [
+  {
+    id: 'mind-belief',
+    label: 'Mind & Belief Change',
+    tagline: 'Break the patterns keeping you stuck.',
+    body: 'These therapies work directly with the subconscious mind to identify and rewrite limiting beliefs, neutralize emotional pain, and shift behaviour at the root level.',
+  },
+  {
+    id: 'body-energy',
+    label: 'Body & Energy',
+    tagline: 'Address pain, fatigue, and energy imbalances.',
+    body: "These approaches work with the body's energy system to reduce physical pain, release emotional charge stored in the body, and assess your overall energy health.",
+  },
+  {
+    id: 'coaching',
+    label: 'Coaching & Life Transformation',
+    tagline: 'Navigate change and rediscover your direction.',
+    body: 'For clients at a crossroads — seeking purpose, working through a major life transition, or wanting a thought partner for their growth.',
+  },
+  {
+    id: 'vibrational',
+    label: 'Vibrational Wellness',
+    tagline: 'Complementary energy-based practices.',
+    body: 'These approaches complement your other sessions and are grounded in the understanding that water, intention, and vibrational frequency play a role in wellbeing.',
+  },
+]
+---
+
+<BaseLayout
+  title="Holistic Health Services — Virtual Across Canada"
+  description="10 natural healing modalities including TFT tapping, hypnosis, Psych-K, NLP, mindscaping & life coaching. Book a free 30-minute discovery call with Fern Wolf."
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 mb-5">
+        Find the right support for you
+      </h1>
+      <div class="prose-gv">
+        <p>I offer a wide range of holistic therapies — each one carefully chosen because it works. Whether you're dealing with physical pain, emotional blocks, ingrained habits, or a need for deeper life direction, there's an approach here designed for you.</p>
+        <p>Not sure where to start? <a href="/help/">Browse by what you're dealing with →</a> or <a href="/book/">book a free 30-minute call</a> and we'll figure it out together.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing summary -->
+  <section class="bg-cream-100 py-10">
+    <div class="container-content max-w-narrow">
+      <div class="bg-cream-200 rounded-xl p-6 border border-cream-300 flex flex-wrap gap-6 items-center justify-between">
+        <div>
+          <p class="font-semibold text-charcoal-900">Sessions start at <span class="text-sage-500">$60 CAD</span> · 60 min: <span class="text-sage-500">$110 CAD</span></p>
+          <p class="text-sm text-charcoal-500 mt-1">Your first session includes a complimentary extra 15 minutes. If cost is a concern, reach out — nobody is turned away.</p>
+        </div>
+        <BookingCTA label="Book a Free Discovery Call" size="md" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  {categories.map(cat => {
+    const services = allServices
+      .filter(s => s.data.category === cat.id)
+      .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99))
+    return (
+      <section id={cat.id} class="bg-cream-100 py-14 lg:py-20 border-t border-cream-200">
+        <div class="container-content">
+          <div class="mb-10">
+            <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-1">{cat.label}</h2>
+            <p class="text-sage-500 italic mb-3">{cat.tagline}</p>
+            <p class="text-charcoal-700 max-w-2xl">{cat.body}</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map(service => (
+              <a
+                href={`/services/${service.slug}/`}
+                class="block bg-cream-200 hover:bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-cream-300 transition-all duration-200 group"
+              >
+                <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-2 group-hover:text-sage-500 transition-colors">
+                  {service.data.title}
+                </h3>
+                <p class="text-charcoal-500 text-sm leading-relaxed">{service.data.description}</p>
+                <span class="inline-block mt-4 text-sm font-semibold text-sage-500 group-hover:underline">Learn more →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  })}
+
+  <!-- Not sure section -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow text-center">
+      <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-4">Not sure which service is right for you?</h2>
+      <p class="text-charcoal-700 mb-8">Browse by what you're dealing with — I'll point you to the most effective approach for your situation.</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        {[
+          { label: 'Anxiety & Stress', href: '/help/anxiety-stress/' },
+          { label: 'Chronic Pain', href: '/help/chronic-pain/' },
+          { label: 'Sleep Problems', href: '/help/sleep/' },
+          { label: 'Fears & Phobias', href: '/help/fears-phobias/' },
+          { label: 'Weight & Habits', href: '/help/weight-habits/' },
+          { label: 'Life Direction & Purpose', href: '/help/life-direction/' },
+        ].map(link => (
+          <a href={link.href} class="bg-white hover:bg-sage-50 border border-cream-300 hover:border-sage-200 text-charcoal-700 hover:text-sage-600 rounded-lg px-4 py-2 text-sm font-medium transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <p class="text-charcoal-500 text-sm">Or <a href="/book/" class="underline hover:text-sage-500">book a free 30-minute discovery call</a> — no commitment, just a conversation.</p>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,10 @@
+---
+interface Props {
+  class?: string
+}
+const { class: className } = Astro.props
+---
+
+<p class={`text-xs text-charcoal-500 italic leading-relaxed ${className ?? ''}`}>
+  Individual results vary and are not guaranteed. Testimonials reflect personal experiences and are not intended to represent typical outcomes. These services are not a substitute for professional medical, psychological, or counselling care.
+</p>

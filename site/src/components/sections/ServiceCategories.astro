@@ -1,0 +1,49 @@
+---
+import ServiceCard from '../ui/ServiceCard.astro'
+
+const categories = [
+  {
+    title: 'Mind & Belief Change',
+    tagline: 'Break the patterns keeping you stuck.',
+    description: 'Psych-K · NLP · Mindscaping · Hypnosis. Work directly with the subconscious to rewrite limiting beliefs and release what holds you back.',
+    href: '/services/#mind-belief',
+  },
+  {
+    title: 'Body & Energy',
+    tagline: 'Address pain, fatigue, and energy imbalances.',
+    description: 'Thought Field Therapy · Bio-Well. Work with the body\'s energy system to reduce physical pain and restore vitality.',
+    href: '/services/#body-energy',
+  },
+  {
+    title: 'Coaching & Life Transformation',
+    tagline: 'Navigate change and rediscover your direction.',
+    description: 'Holistic Life Coaching. For clients at a crossroads seeking purpose, clarity, and a life that actually feels like theirs.',
+    href: '/services/#coaching',
+  },
+  {
+    title: 'Vibrational Wellness',
+    tagline: 'Complementary energy-based practices.',
+    description: 'Source Energy Medicine · HADO · WAVE. Intention-based, water-informed practices that support your wellbeing between sessions.',
+    href: '/services/#vibrational',
+  },
+]
+---
+
+<section class="bg-cream-200 section-pad">
+  <div class="container-content">
+    <div class="text-center mb-12">
+      <h2 class="font-heading font-semibold text-3xl lg:text-4xl text-charcoal-900">How I can help</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {categories.map(cat => (
+        <ServiceCard
+          title={cat.title}
+          tagline={cat.tagline}
+          description={cat.description}
+          href={cat.href}
+        />
+      ))}
+    </div>
+  </div>
+</section>

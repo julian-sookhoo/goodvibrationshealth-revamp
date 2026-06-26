@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro'
+import CTABanner from '../components/sections/CTABanner.astro'
+import PlaceholderImage from '../components/ui/PlaceholderImage.astro'
+import BookingCTA from '../components/ui/BookingCTA.astro'
+
+const credentials = [
+  { cert: 'Certified Hypnotist', body: 'National Guild of Hypnotists' },
+  { cert: 'Simpson Protocol of Hypnosis', body: 'Certified' },
+  { cert: 'Virtual Gastric Band Hypnosis', body: 'Certified' },
+  { cert: 'TFT Advanced Tapping Facilitator & Instructor', body: 'TFT Foundation (cert. 2013)' },
+  { cert: 'Psych-K Advanced Practitioner', body: 'Basic & Advanced, 2005' },
+  { cert: 'Certified NLP Practitioner', body: '' },
+  { cert: 'Mindscaping Specialist', body: 'Trained by Mike Mandel' },
+  { cert: 'Hado Instructor', body: 'Trained by Dr. Masaru Emoto' },
+  { cert: 'Source Energy Medicine Practitioner', body: 'Canadian Representative' },
+  { cert: 'Non-Material Source Energy Medicine Practitioner', body: '' },
+  { cert: 'Bio-Energetics Certified', body: '' },
+  { cert: 'Holoenergetics Certified', body: '' },
+  { cert: 'B.E.S.T. Trained', body: 'Bio-Energetic Synchronization Technique' },
+  { cert: 'Reconnective Healing Certified', body: '' },
+  { cert: 'Matrix Energetics Certified', body: '' },
+]
+---
+
+<BaseLayout
+  title="About Fern Wolf — Holistic Health Practitioner"
+  description="Fern Wolf has helped clients across Canada reclaim their health since 1999. 15 certifications, trained by the founders of TFT, HADO & Psych-K. Virtual sessions Canada-wide."
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 mb-5">
+            About Fern Wolf
+          </h1>
+          <p class="text-lg text-charcoal-700 leading-relaxed">
+            25+ years helping people reclaim their health, break limiting patterns, and live with more ease — virtually, across Canada.
+          </p>
+        </div>
+        <div>
+          <PlaceholderImage width={700} height={800} alt="Fern Wolf, holistic health practitioner" class="max-w-xs mx-auto lg:max-w-sm" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who I Help -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-6">The people I work with</h2>
+      <div class="prose-gv">
+        <p>My clients come to me when they've tried everything else. They're dealing with pain that won't respond to treatment, anxiety that medication only manages but never resolves, or a quiet feeling that they're meant for something more than their current life reflects. Many have been told their symptoms are "stress-related" or "just in their head." They're right — in the best possible way.</p>
+        <p>I work with people who are ready to look at what's really going on beneath the surface and willing to try a different approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Approach -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-6">What makes this different</h2>
+      <div class="prose-gv">
+        <p>Conventional medicine is extraordinary at many things. But when it comes to chronic conditions, persistent emotional pain, or deeply ingrained habits, it often treats the symptom while the root cause goes unaddressed.</p>
+        <p>My work starts at the root. Every feeling, belief, and physical symptom has an underlying pattern — most often held in the subconscious mind, where willpower alone can't reach. When we work at that level, change doesn't have to be hard. It can happen fast, sometimes within a single session.</p>
+        <p>I draw from a wide range of established, time-tested, and energy-based modalities — not because more is better, but because each person is different. The right tool for your situation is the one that works for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Story (placeholder) -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-6">How I got here</h2>
+      <div class="bg-cream-200 rounded-xl p-8 border-l-4 border-sage-300">
+        <!-- TODO: Fern's personal story — needs direct input from Fern -->
+        <p class="text-charcoal-500 italic">Fern's personal story will be added here — the turning point that brought her to this work, written in her own voice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track Record -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-6">25+ years of results</h2>
+      <div class="prose-gv">
+        <p>I've been working with clients since 1999 — first in Georgetown, Ontario, and now virtually from Toronto, serving clients across Canada. Over those decades I've completed 15 certifications, trained directly under the founders of several of the modalities I use, and attended three advanced retreats with Dr. Joe Dispenza.</p>
+        <p>My results aren't theoretical. They're in the stories my clients share — pain gone in minutes, sleep restored after years of insomnia, long-standing emotional wounds finally released.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content">
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-semibold text-3xl text-charcoal-900">Certifications & Training</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
+        {credentials.map(c => (
+          <div class="bg-cream-200 rounded-xl p-4">
+            <p class="font-semibold text-charcoal-900 text-sm">{c.cert}</p>
+            {c.body && <p class="text-charcoal-500 text-xs mt-0.5">{c.body}</p>}
+          </div>
+        ))}
+      </div>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-sage-100 rounded-xl p-4">
+          <p class="font-semibold text-charcoal-900 text-sm">Advanced Retreats</p>
+          <p class="text-charcoal-500 text-xs mt-0.5">3× with Dr. Joe Dispenza</p>
+        </div>
+        <div class="bg-sage-100 rounded-xl p-4">
+          <p class="font-semibold text-charcoal-900 text-sm">Student of Terry Bell</p>
+          <p class="text-charcoal-500 text-xs mt-0.5">Sho-Tai Creator</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training + Speaking teaser -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-5">Training & public speaking</h2>
+      <div class="prose-gv mb-6">
+        <p>I teach what I practice. I offer a TFT Certificate Algorithm Course (online, $180 CAD) and a free monthly Introduction to TFT Tapping (first Tuesday of each month, 12:30–1:30pm EST). I'm also available as a speaker for wellness events, corporate health days, and conferences.</p>
+      </div>
+      <a href="/training/" class="text-sage-500 hover:text-sage-600 font-semibold underline">Enquire about speaking or training →</a>
+    </div>
+  </section>
+
+  <!-- Gratitude -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-5">Standing on the shoulders of giants</h2>
+      <div class="prose-gv">
+        <p>I'm deeply grateful to the teachers whose work and wisdom shaped mine: Joel Goldsmith, Eckhart Tolle, Michael Singer, Dr. David Hawkins, Dr. Roger Callahan (TFT), Rob Williams (Psych-K), and many others. A special acknowledgment to Stephen Pollitt, who introduced me to non-duality teachings and Source Energy Medicine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow text-center">
+      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-4">Ready to start?</h2>
+      <p class="text-charcoal-700 mb-8">Your first session includes a complimentary extra 15 minutes. Book a free discovery call first — no commitment required.</p>
+      <BookingCTA label="Book a Free Discovery Call" />
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

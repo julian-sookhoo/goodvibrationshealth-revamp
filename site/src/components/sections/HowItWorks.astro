@@ -1,0 +1,41 @@
+---
+const steps = [
+  {
+    number: '1',
+    title: 'Choose your support',
+    body: 'Browse services by category or by the challenge you\'re facing. Not sure? Book a free discovery call first.',
+  },
+  {
+    number: '2',
+    title: 'Book your session',
+    body: 'Virtual sessions available across Canada. Quick, easy online booking — no back-and-forth emails.',
+  },
+  {
+    number: '3',
+    title: 'Experience the shift',
+    body: 'Most clients notice meaningful change within their first session. The work continues with you long after.',
+  },
+]
+---
+
+<section class="bg-cream-100 section-pad">
+  <div class="container-content">
+    <div class="text-center mb-14">
+      <h2 class="font-heading font-semibold text-3xl lg:text-4xl text-charcoal-900">
+        Three steps to lasting change
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      {steps.map(step => (
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-full bg-sage-400 text-white font-heading font-bold text-2xl flex items-center justify-center mx-auto mb-5">
+            {step.number}
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-charcoal-900 mb-3">{step.title}</h3>
+          <p class="text-charcoal-700 leading-relaxed">{step.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro'
+import { SITE } from '../data/site'
+---
+
+<BaseLayout
+  title="Terms of Service — Good Vibrations Health"
+  description="Terms of Service for Good Vibrations Health. Information about session bookings, cancellations, payments, and scope of services."
+  noindex={true}
+>
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h1 class="font-heading font-bold text-4xl text-charcoal-900 mb-3">Terms of Service</h1>
+      <p class="text-charcoal-500 text-sm">These terms are being finalized and will be updated before this site goes live.</p>
+    </div>
+  </section>
+
+  <section class="bg-cream-100 py-12 lg:py-16">
+    <div class="container-content max-w-narrow">
+      <div class="prose-gv">
+
+        <h2>About These Terms</h2>
+        <p>This page is currently being finalized. The complete Terms of Service — covering booking, cancellation, payment, scope of services, and limitations of liability — will be published before this site goes live.</p>
+        <p>If you have questions about how sessions work, pricing, or cancellations in the meantime, please reach out directly:</p>
+
+        <ul>
+          <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          <li>Phone: <a href={`tel:${SITE.phone}`}>{SITE.phone}</a></li>
+        </ul>
+
+        <h2>Services Disclaimer</h2>
+        <p>The services offered by Good Vibrations Health are complementary wellness practices and are not a substitute for professional medical, psychological, or counselling care. Clients should always follow the advice of their qualified healthcare providers for medical conditions.</p>
+
+        <h2>Effective Date</h2>
+        <p>These terms will be effective as of the site's official launch date.</p>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

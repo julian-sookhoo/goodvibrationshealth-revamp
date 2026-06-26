@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro'
+import BookingCTA from '../components/ui/BookingCTA.astro'
+import FAQAccordion from '../components/ui/FAQAccordion.astro'
+import { SITE } from '../data/site'
+
+const steps = [
+  {
+    title: "You'll receive a confirmation email",
+    body: 'With your session details and a video call link (if applicable).',
+  },
+  {
+    title: 'Before your session',
+    body: "No special preparation needed. Just find a quiet, comfortable space where you won't be interrupted.",
+  },
+  {
+    title: 'During your session',
+    body: "We'll talk about what brought you here, then move into the work. Most sessions are 30–60 minutes.",
+  },
+  {
+    title: 'After your session',
+    body: 'Many clients notice shifts immediately. The work often continues to unfold in the days following.',
+  },
+]
+
+const sessionFaqs = [
+  {
+    q: 'What if I need to cancel or reschedule?',
+    a: 'Please give as much notice as possible. Contact Fern directly by email or phone to arrange.',
+  },
+  {
+    q: 'Do you accept insurance?',
+    a: "Some extended health plans cover these services. I provide receipts for all sessions. Check with your insurer directly.",
+  },
+  {
+    q: "What if I'm not sure which service I need?",
+    a: "Book the free discovery call. We'll figure out the best approach together.",
+  },
+  {
+    q: 'Is cost a barrier?',
+    a: `Please reach out — no one is turned away for financial reasons. Email ${SITE.email}.`,
+  },
+]
+---
+
+<BaseLayout
+  title="Book a Session — Good Vibrations Health"
+  description="Book a free 30-minute discovery call or paid session with Fern Wolf. Virtual sessions available across Canada. No back-and-forth emails — just book and you're in."
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 mb-4">Let's get started.</h1>
+      <p class="text-lg text-charcoal-700 mb-2">
+        First time? Start with a free 30-minute discovery call. No commitment — just a conversation about what you're dealing with and whether I can help.
+      </p>
+    </div>
+  </section>
+
+  <!-- Primary CTA -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <div class="bg-cream-200 rounded-2xl p-8 lg:p-12 text-center border border-cream-300 shadow-sm">
+        <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-3">Book a Free Discovery Call</h2>
+        <p class="text-charcoal-700 mb-6">30 minutes · No charge · No commitment</p>
+        <BookingCTA label="Book Your Free Discovery Call" eventType="discovery" size="lg" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
+        <div class="bg-cream-200 rounded-xl p-6 text-center border border-cream-300">
+          <p class="text-xs text-charcoal-500 uppercase tracking-wider mb-1">30-Minute Session</p>
+          <p class="font-heading font-bold text-2xl text-charcoal-900 mb-3">$60 CAD</p>
+          <BookingCTA label="Book 30-Minute Session" eventType="paid-30" variant="secondary" size="md" />
+        </div>
+        <div class="bg-cream-200 rounded-xl p-6 text-center border border-cream-300">
+          <p class="text-xs text-charcoal-500 uppercase tracking-wider mb-1">60-Minute Session</p>
+          <p class="font-heading font-bold text-2xl text-charcoal-900 mb-3">$110 CAD</p>
+          <BookingCTA label="Book 60-Minute Session" eventType="paid-60" variant="secondary" size="md" />
+        </div>
+      </div>
+      <p class="text-center text-sm text-charcoal-500 mt-4 italic">Your first paid session includes a complimentary extra 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- What to expect -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-8">What to expect after booking</h2>
+      <ol class="space-y-6">
+        {steps.map((step, i) => (
+          <li class="flex gap-5">
+            <span class="w-8 h-8 rounded-full bg-sage-400 text-white text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">
+              {i + 1}
+            </span>
+            <div>
+              <p class="font-semibold text-charcoal-900 mb-1">{step.title}</p>
+              <p class="text-charcoal-700 text-sm leading-relaxed">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-8">Questions about booking</h2>
+      <FAQAccordion items={sessionFaqs} />
+    </div>
+  </section>
+
+  <!-- Prefer to contact directly -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-4">Prefer to contact directly?</h2>
+      <p class="text-charcoal-700 mb-6">That's fine too. Reach out and we'll find a time.</p>
+      <div class="flex flex-col sm:flex-row gap-4 mb-10">
+        <a href={`tel:${SITE.phone}`} class="flex items-center gap-2 text-sage-500 hover:underline font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          {SITE.phone}
+        </a>
+        <a href={`mailto:${SITE.email}`} class="flex items-center gap-2 text-sage-500 hover:underline font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          {SITE.email}
+        </a>
+      </div>
+
+      <!-- Netlify contact form -->
+      <div class="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-cream-200">
+        <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-5">Send a message</h3>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-charcoal-700 mb-1">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-2.5 rounded-lg border border-charcoal-200 bg-cream-50 text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-charcoal-700 mb-1">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-2.5 rounded-lg border border-charcoal-200 bg-cream-50 text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-charcoal-700 mb-1">Phone <span class="text-charcoal-400 font-normal">(optional)</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="w-full px-4 py-2.5 rounded-lg border border-charcoal-200 bg-cream-50 text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-charcoal-700 mb-1">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              required
+              class="w-full px-4 py-2.5 rounded-lg border border-charcoal-200 bg-cream-50 text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent resize-y"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-sage-400 hover:bg-sage-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <p class="mt-6 text-sm text-charcoal-500">
+        All sessions are conducted <strong>virtually via video call or phone</strong>. Fern is based in Toronto, Ontario, and serves clients across Canada.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

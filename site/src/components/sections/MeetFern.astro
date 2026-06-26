@@ -1,0 +1,27 @@
+---
+import PlaceholderImage from '../ui/PlaceholderImage.astro'
+import Button from '../ui/Button.astro'
+---
+
+<section class="bg-cream-100 section-pad">
+  <div class="container-content">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+
+      <!-- Photo -->
+      <div>
+        <PlaceholderImage width={600} height={600} alt="Fern Wolf, holistic health practitioner" class="max-w-xs mx-auto lg:max-w-sm" />
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h2 class="font-heading font-semibold text-3xl lg:text-4xl text-charcoal-900 mb-5">
+          Meet Fern Wolf
+        </h2>
+        <p class="text-lg text-charcoal-700 leading-relaxed mb-6">
+          Fern Wolf has been helping people reclaim their health, break limiting patterns, and live with more ease since 1999. With 15 certifications and a deep range of tools — from clinical hypnosis to meridian tapping to life coaching — she meets each client exactly where they are.
+        </p>
+        <Button href="/about/" variant="ghost">Learn more about Fern</Button>
+      </div>
+    </div>
+  </div>
+</section>

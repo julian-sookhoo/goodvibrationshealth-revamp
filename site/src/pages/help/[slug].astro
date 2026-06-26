@@ -1,0 +1,138 @@
+---
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import BaseLayout from '../../components/layout/BaseLayout.astro'
+import PricingBlock from '../../components/ui/PricingBlock.astro'
+import TestimonialCard from '../../components/ui/TestimonialCard.astro'
+import CTABanner from '../../components/sections/CTABanner.astro'
+import { TESTIMONIALS } from '../../data/testimonials'
+import { ALL_SERVICES } from '../../data/navigation'
+
+export async function getStaticPaths() {
+  const conditions = await getCollection('conditions')
+  return conditions.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+type Props = { entry: CollectionEntry<'conditions'> }
+const { entry } = Astro.props
+const { Content } = await entry.render()
+const {
+  title,
+  headline,
+  description,
+  primaryServices,
+  secondaryServices,
+  featuredTestimonial,
+  metaTitle,
+  metaDescription,
+} = entry.data
+
+const featured = featuredTestimonial
+  ? TESTIMONIALS.filter(t => t.key === featuredTestimonial).slice(0, 1)
+  : TESTIMONIALS.filter(t => t.conditions.includes(entry.slug)).slice(0, 2)
+
+const getServiceLabel = (slug: string) =>
+  ALL_SERVICES.find(s => s.href.includes(slug))?.label ?? slug
+
+const getServiceHref = (slug: string) =>
+  ALL_SERVICES.find(s => s.href.includes(slug))?.href ?? `/services/${slug}/`
+---
+
+<BaseLayout
+  title={metaTitle ?? title}
+  description={metaDescription ?? description}
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content max-w-narrow">
+      <p class="text-sm font-semibold text-sage-500 uppercase tracking-wider mb-3">
+        <a href="/help/" class="hover:underline">I Need Help With…</a> / {title}
+      </p>
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 leading-tight">
+        {headline}
+      </h1>
+    </div>
+  </section>
+
+  <!-- Opening paragraph -->
+  <section class="bg-cream-100 py-12 lg:py-14">
+    <div class="container-content max-w-narrow">
+      <div class="prose-gv text-lg">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <!-- Primary services -->
+  <section class="bg-cream-200 py-12 lg:py-16">
+    <div class="container-content max-w-narrow">
+      <h2 class="font-heading font-semibold text-2xl lg:text-3xl text-charcoal-900 mb-8">
+        Here's how I can help
+      </h2>
+
+      <div class="space-y-5 mb-10">
+        {primaryServices.map(slug => (
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-cream-200">
+            <h3 class="font-heading font-semibold text-lg text-charcoal-900 mb-1">
+              <a href={getServiceHref(slug)} class="hover:text-sage-500 transition-colors">
+                {getServiceLabel(slug)}
+              </a>
+            </h3>
+            <a href={getServiceHref(slug)} class="text-sm text-sage-500 hover:underline font-medium">
+              Learn about this approach →
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {secondaryServices && secondaryServices.length > 0 && (
+        <div>
+          <h3 class="font-heading font-semibold text-lg text-charcoal-700 mb-4">
+            Also helpful for {title.toLowerCase()}:
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            {secondaryServices.map(slug => (
+              <a
+                href={getServiceHref(slug)}
+                class="inline-flex items-center bg-cream-100 hover:bg-sage-100 border border-cream-300 hover:border-sage-200 text-charcoal-700 hover:text-sage-600 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+              >
+                {getServiceLabel(slug)}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  {featured.length > 0 && (
+    <section class="bg-cream-100 py-12 lg:py-16">
+      <div class="container-content max-w-narrow">
+        <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-8">What clients say</h2>
+        <div class="space-y-5">
+          {featured.map(t => (
+            <TestimonialCard
+              quote={t.quote}
+              name={t.name}
+              location={t.location}
+              result={t.result}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Pricing -->
+  <section class="bg-cream-200 py-12 lg:py-16">
+    <div class="container-content max-w-narrow">
+      <PricingBlock />
+    </div>
+  </section>
+
+  <CTABanner heading={`Ready to address your ${title.toLowerCase()}?`} />
+</BaseLayout>

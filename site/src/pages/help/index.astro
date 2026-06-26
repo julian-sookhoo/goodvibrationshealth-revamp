@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../components/layout/BaseLayout.astro'
+import ConditionCard from '../../components/ui/ConditionCard.astro'
+import CTABanner from '../../components/sections/CTABanner.astro'
+import BookingCTA from '../../components/ui/BookingCTA.astro'
+
+const conditions = await getCollection('conditions')
+
+const conditionOrder = ['anxiety-stress', 'chronic-pain', 'sleep', 'fears-phobias', 'weight-habits', 'life-direction']
+const sorted = conditionOrder
+  .map(slug => conditions.find(c => c.slug === slug))
+  .filter(Boolean) as typeof conditions
+---
+
+<BaseLayout
+  title="I Need Help With…"
+  description="Choose what brings you here — find the most effective holistic approaches for anxiety, chronic pain, sleep, fears, weight, and life direction. Virtual sessions across Canada."
+>
+  <!-- Hero -->
+  <section class="bg-cream-200 py-14 lg:py-20">
+    <div class="container-content text-center max-w-narrow">
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-charcoal-900 mb-4">
+        What are you dealing with?
+      </h1>
+      <p class="text-lg text-charcoal-700">
+        Choose what brings you here — I'll show you the most effective approaches for your situation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Condition cards -->
+  <section class="bg-cream-100 py-14 lg:py-20">
+    <div class="container-content">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sorted.map(condition => (
+          <ConditionCard
+            title={condition.data.title}
+            description={condition.data.description}
+            href={`/help/${condition.slug}/`}
+          />
+        ))}
+      </div>
+
+      <div class="mt-14 text-center bg-cream-200 rounded-xl p-8 max-w-xl mx-auto">
+        <p class="text-charcoal-700 mb-5">
+          Not sure which fits? That's exactly what the free discovery call is for.
+        </p>
+        <BookingCTA label="Book a Free 30-Minute Discovery Call" />
+        <p class="mt-4 text-sm text-charcoal-500">
+          Or <a href="/services/" class="underline hover:text-sage-500">browse all services →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

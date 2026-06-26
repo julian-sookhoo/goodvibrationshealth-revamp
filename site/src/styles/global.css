@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-cream-100 text-charcoal-900 font-body;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .prose-gv h2 {
+    @apply text-2xl lg:text-3xl font-heading font-semibold text-charcoal-900 mt-10 mb-4;
+  }
+
+  .prose-gv h3 {
+    @apply text-xl font-heading font-semibold text-charcoal-900 mt-6 mb-3;
+  }
+
+  .prose-gv p {
+    @apply text-charcoal-700 leading-relaxed mb-4;
+  }
+
+  .prose-gv ul {
+    @apply list-disc list-outside ml-5 space-y-2 mb-4 text-charcoal-700;
+  }
+
+  .prose-gv ol {
+    @apply list-decimal list-outside ml-5 space-y-2 mb-4 text-charcoal-700;
+  }
+
+  .prose-gv li {
+    @apply text-charcoal-700 leading-relaxed;
+  }
+
+  .prose-gv strong {
+    @apply font-semibold text-charcoal-900;
+  }
+
+  .prose-gv a {
+    @apply text-sage-500 hover:text-sage-600 underline;
+  }
+
+  .prose-gv blockquote {
+    @apply border-l-4 border-sage-300 pl-4 italic text-charcoal-500 my-6;
+  }
+
+  .container-content {
+    @apply mx-auto px-6 lg:px-10 max-w-content;
+  }
+
+  .section-pad {
+    @apply py-16 lg:py-24;
+  }
+}

@@ -1,0 +1,23 @@
+---
+interface Props {
+  width: number
+  height: number
+  alt: string
+  class?: string
+}
+
+const { width, height, alt, class: className } = Astro.props
+const ratio = `${width} / ${height}`
+---
+
+<div
+  class={`bg-sage-200 flex items-center justify-center rounded-xl overflow-hidden ${className ?? ''}`}
+  style={`aspect-ratio: ${ratio}; width: 100%;`}
+  role="img"
+  aria-label={alt}
+>
+  <div class="text-center p-6 select-none">
+    <div class="text-sage-500 font-body text-xs font-semibold tracking-widest uppercase mb-1">Photo Placeholder</div>
+    <div class="text-sage-400 font-body text-xs">{width}×{height}px</div>
+  </div>
+</div>
