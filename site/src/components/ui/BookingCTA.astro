@@ -1,13 +1,11 @@
 ---
 /**
- * CALENDLY PLACEHOLDER
- * Currently renders a mailto: link.
+ * CALENDLY BOOKING CTA
+ * Uses Calendly popup widget. Calendly CSS/JS loaded in BaseLayout.astro.
  *
- * TO SWAP IN CALENDLY:
- * 1. Add Calendly CSS/JS to BaseLayout.astro <head>
- * 2. Replace the <a> tag below with:
- *    <a href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URLS[eventType]}); return false;">
- * 3. Set CALENDLY_URLS to Fern's actual Calendly event URLs
+ * TO UPDATE WITH FERN'S REAL CALENDLY LINKS:
+ * Replace the URLs in CALENDLY_URLS below with her actual event URLs.
+ * Each eventType can point to a different Calendly event.
  */
 
 interface Props {
@@ -26,27 +24,27 @@ const {
   class: className,
 } = Astro.props
 
-const EMAIL = 'fernmwolf@gmail.com'
-
-const SUBJECTS = {
-  discovery:  'Free 30-Minute Discovery Call Request',
-  'paid-30':  'Appointment Request – 30-Minute Session',
-  'paid-60':  'Appointment Request – 60-Minute Session',
+const CALENDLY_URLS: Record<string, string> = {
+  discovery:  'https://calendly.com/jgsookhoo/life-coaching-session',
+  'paid-30':  'https://calendly.com/jgsookhoo/life-coaching-session',
+  'paid-60':  'https://calendly.com/jgsookhoo/life-coaching-session',
 }
 
-const href = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECTS[eventType])}`
+const calendlyUrl = CALENDLY_URLS[eventType]
 
 const sizeClass = size === 'lg' ? 'px-8 py-4 text-base' : 'px-6 py-3 text-sm'
 
 const variantClass = variant === 'primary'
   ? 'bg-sage-400 hover:bg-sage-500 text-white'
   : 'bg-terra-400 hover:bg-terra-500 text-white'
+
+const classes = `inline-flex items-center justify-center font-semibold rounded-lg transition-colors duration-200 cursor-pointer ${sizeClass} ${variantClass} ${className ?? ''}`
 ---
 
-<!-- CALENDLY SWAP POINT: replace <a> tag below when Calendly is ready -->
 <a
-  href={href}
-  class={`inline-flex items-center justify-center font-semibold rounded-lg transition-colors duration-200 ${sizeClass} ${variantClass} ${className ?? ''}`}
+  href={calendlyUrl}
+  onclick={`Calendly.initPopupWidget({url: '${calendlyUrl}'}); return false;`}
+  class={classes}
 >
   {label}
 </a>

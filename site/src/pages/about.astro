@@ -2,7 +2,6 @@
 import BaseLayout from '../components/layout/BaseLayout.astro'
 import CTABanner from '../components/sections/CTABanner.astro'
 import PlaceholderImage from '../components/ui/PlaceholderImage.astro'
-import BookingCTA from '../components/ui/BookingCTA.astro'
 import { SITE } from '../data/site'
 
 const personSchema = {
@@ -166,14 +165,8 @@ const credentials = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-cream-200 py-14 lg:py-20">
-    <div class="container-content max-w-narrow text-center">
-      <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-4">Ready to start?</h2>
-      <p class="text-charcoal-700 mb-8">Your first session includes a complimentary extra 15 minutes. Book a free discovery call first — no commitment required.</p>
-      <BookingCTA label="Book a Free Discovery Call" />
-    </div>
-  </section>
-
-  <CTABanner />
+  <CTABanner
+    heading="Ready to start?"
+    body="Your first session includes a complimentary extra 15 minutes. Book a free discovery call first — no commitment required."
+  />
 </BaseLayout>
