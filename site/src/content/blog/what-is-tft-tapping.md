@@ -59,6 +59,4 @@ If you've been carrying something that hasn't responded to other approaches, TFT
 
 ---
 
-**Ready to see what's possible?** [Book a free 30-minute discovery call](/book/) — we'll talk about what you're dealing with and whether TFT is the right starting point.
-
-You can also join the **free monthly Introduction to TFT Tapping** session — held the first Tuesday of every month, 12:30–1:30pm EST via Zoom. [Contact me to register.](mailto:fernmwolf@gmail.com?subject=TFT%20Intro%20Session%20Registration)
+Want to experience TFT before committing to a session? Join the **free monthly Introduction to TFT Tapping** — first Tuesday of every month, 12:30–1:30pm EST via Zoom. [Contact Fern to register.](mailto:fernmwolf@gmail.com?subject=TFT%20Intro%20Session%20Registration)
