@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../components/layout/BaseLayout.astro'
 import CTABanner from '../../components/sections/CTABanner.astro'
-import BookingCTA from '../../components/ui/BookingCTA.astro'
 
 const posts = await getCollection('blog')
 const hasPosts = posts.length > 0
@@ -43,10 +42,9 @@ const hasPosts = posts.length > 0
             </svg>
           </div>
           <h2 class="font-heading font-semibold text-2xl text-charcoal-900 mb-3">Posts coming soon</h2>
-          <p class="text-charcoal-500 mb-8 max-w-md mx-auto">
+          <p class="text-charcoal-500 max-w-md mx-auto">
             Articles on holistic health, healing, and natural wellness are in the works. In the meantime, book a free discovery call to get started.
           </p>
-          <BookingCTA label="Book a Free Discovery Call" />
         </div>
       )}
     </div>
