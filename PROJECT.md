@@ -13,7 +13,13 @@
 - Facebook: https://www.facebook.com/goodvibrationshealth4u
 - Twitter/X: https://twitter.com/Good_vibra_hlth
 - Current web designer: freshchallenge.ca (being replaced — we are taking over)
-- Booking platform: Calendly (free tier, to start — upgrade to Jane App if/when volume warrants)
+- Booking platform: mailto placeholder (fernmwolf@gmail.com) — Calendly free tier when Fern is ready
+
+## POC / Staging
+- **Netlify staging URL:** https://good-vibrations.netlify.app/
+- **Status:** Live — sent to Fern for review on 2026-06-26
+- **Repo:** https://github.com/julian-sookhoo/goodvibrationshealth-revamp
+- **Astro project root:** `/site/`
 
 ## Project Goal
 A massive overhaul to bring in significantly more clients. Not minor fixes — a full strategic redesign of messaging, structure, and conversion mechanics. The site must shift from an esoteric information brochure into a client-acquisition tool.
@@ -54,24 +60,26 @@ These are critical-path blockers. Nothing downstream can be finalized until each
 | Decision | Options | Owner | Date Needed |
 |---|---|---|---|
 | ~~**Free consultation offer**~~ | ✅ **RESOLVED — 30-minute free discovery call** (confirmed by Fern) | Fern | Done |
-| **Booking platform** | Jane App / Acuity / Calendly — see SITE-ARCHITECTURE.md | Fern + dev | Before Phase 2 |
+| ~~**Booking platform**~~ | ✅ **RESOLVED** — mailto placeholder live; Calendly when Fern is ready | Done | Done |
 | ~~**Bio-Well virtual delivery**~~ | ✅ **RESOLVED** — Fern no longer offers Bio-Well. Page kept for referral traffic only. Rewritten as referral page. | Fern | Done |
 | **WAVE product model** | Is this sold as a product (needs e-commerce) or an enquiry-only offering? | Fern | Before Phase 3 |
 | ~~**Tech stack**~~ | ✅ **RESOLVED — Astro + Tailwind CSS + Netlify/Vercel** | Done | Done |
-| **CMS / platform** | What is the current site built on? WordPress? Are we rebuilding on the same platform? | Dev | Before Phase 5 |
-| **Legal review of testimonials** | Remove high-risk claims (suicidal depression, tumour, parasites) or keep with legal sign-off? | Fern + lawyer | Before launch |
-| **Testimonial consent** | Obtain written consent from every named client before publishing | Fern | Before Phase 3.8 |
-| **AODA compliance** | What level of accessibility is required? Budget for audit? | Fern + dev | Before Phase 5 |
+| ~~**CMS / platform**~~ | ✅ **RESOLVED** — Astro 4.x + Tailwind CSS + Netlify (full replacement) | Done | Done |
+| ~~**Legal review of testimonials**~~ | ✅ **RESOLVED** — High-risk entries removed (suicidal depression, parasites, tumour) | Done | Done |
+| **Testimonial consent** | Obtain written consent from every named client before publishing | Fern | Before launch |
+| **AODA compliance** | What level of accessibility is required? Budget for audit? | Fern + dev | Before launch |
 
 ## Key Decisions — NON-BLOCKING (needed before launch)
-- [ ] Confirm new URL structure / URL redirects needed
-- [ ] Decide on new brand colour palette
-- [ ] Commission professional photography session
-- [ ] Confirm whether to retain current web designer or switch
+- [x] Confirm new URL structure / URL redirects — ✅ done, 301s live in netlify.toml
+- [x] Confirm whether to retain current web designer — ✅ we are taking over
+- [x] Confirm TFT course dates — ✅ evergreen ("contact for next date")
+- [x] Coaching structure — ✅ as-needed, no set schedule
+- [ ] Decide on final brand colour palette (current: sage/cream/terracotta — pending Fern approval)
+- [ ] Commission professional photography session (3 placeholder images in use)
 - [ ] Confirm insurance body registrations (affects FAQ answer)
-- [ ] Confirm cancellation policy
-- [ ] Confirm coaching session cadence and packages
-- [ ] Confirm TFT course dates (March 2025 date is expired — needs update)
+- [ ] Confirm cancellation policy (placeholder on FAQ + Book Now pages)
+- [ ] WAVE: enquiry-only confirmed or e-commerce needed?
+- [ ] Fern's personal story for About page (placeholder comment in code)
 
 ## Project Files
 | File | Purpose |
@@ -79,15 +87,27 @@ These are critical-path blockers. Nothing downstream can be finalized until each
 | [CONTENT-INVENTORY.md](CONTENT-INVENTORY.md) | Full audit of the current site |
 | [SITE-ARCHITECTURE.md](SITE-ARCHITECTURE.md) | Proposed new site structure |
 | [REDESIGN-PLAN.md](REDESIGN-PLAN.md) | Full strategy and recommendations |
+| [TECH-SPEC.md](TECH-SPEC.md) | Full technical specification for the Astro build |
+| [HANDOFF-PROMPT.md](HANDOFF-PROMPT.md) | Self-contained prompt for new Claude Code build sessions |
 | [TASKS.md](TASKS.md) | Prioritized implementation checklist |
-| [pages/](pages/) | New page content drafts |
+| [pages/](pages/) | Page content source files (used during build) |
+| [site/](site/) | Astro project — the actual website code |
 
 ## Timeline
 | Phase | Scope | Status |
 |---|---|---|
-| Phase 1 — Analysis | Full site audit & strategy | Complete |
-| Phase 2 — Architecture | Site map, URL plan, booking platform | Not started |
-| Phase 3 — Content | Write all new page copy | Not started |
-| Phase 4 — Design | Visual design, photography | Not started |
-| Phase 5 — Build | Development, testing | Not started |
-| Phase 6 — Launch | Go-live, redirects, SEO setup | Not started |
+| Phase 1 — Analysis | Full site audit & strategy | ✅ Complete |
+| Phase 2 — Architecture | Site map, URL plan, tech stack | ✅ Complete |
+| Phase 3 — Content | All page copy written | ✅ Complete |
+| Phase 4 — Design | Visual design, photography | 🔄 In progress — design live, photography pending |
+| Phase 5 — Build | Development, POC deployed | ✅ Complete — live at https://good-vibrations.netlify.app/ |
+| Phase 6 — Fern Review | POC sent to Fern, awaiting feedback | 🔄 In progress |
+| Phase 7 — Refinement | Address Fern's feedback, fill placeholders | Not started |
+| Phase 8 — Launch | DNS cutover, SEO setup, sitemap | Not started |
+
+## Known Technical Debt (pre-launch)
+- `@astrojs/sitemap` removed — crashes on v3.1.x; re-add when stable version released
+- OG image is SVG placeholder — needs real JPG (1200×630) before launch
+- 3 placeholder images in use — needs photography session
+- Privacy policy and Terms pages are stubs (noindex) — need legal text
+- Calendly not yet integrated — mailto placeholder in `BookingCTA.astro`
