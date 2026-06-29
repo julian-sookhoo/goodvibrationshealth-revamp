@@ -1,15 +1,15 @@
 # Page: Testimonials
 **URL:** /testimonials/
 **Old URL:** /fern-wolf-reviews/ → 301 redirect to /testimonials/
-**Status:** DRAFT — ready for review. High-risk testimonials removed (see notes). Consent to be confirmed before publishing named clients.
+**Status:** DRAFT — ready for review. High-risk testimonials removed. Consent to be confirmed before publishing named clients.
 
 ---
 
 ## Internal Notes (Remove Before Publishing)
 
-> - **Consent:** Fern has given discretion on testimonials. Confirm individually with any named client before publishing full name + city + health outcome, per PIPEDA best practice.
-> - **Mandie Crawford quote:** Verify exact wording directly with Mandie before publishing — the version here may not be verbatim.
-> - **Removed:** Mary Chiummiento (suicidal depression claim — clinical safety risk), Dawn Frail (parasites — disease treatment claim), Camera Layden-Tapp neck mass quote (tumour language). Camera Layden-Tapp's skin rash/multi-modal testimonial is kept — it's specific, credible, and lower-risk.
+> - **Consent:** Fern has given discretion on testimonials. Confirm individually with any named client before publishing full name + location + health outcome, per PIPEDA best practice.
+> - **Mandie Crawford quote:** Verify exact wording directly with Mandie before publishing.
+> - **Removed:** Mary Chiummiento (suicidal depression claim), Dawn Frail (parasites), Camera Layden-Tapp neck mass quote.
 
 ---
 
@@ -28,7 +28,22 @@
 
 ---
 
-## Section 1: Physical Pain
+## Section 1: Physical Pain & Healing
+
+---
+
+**Paul — Belfast, Ireland**
+*4 years of debilitating pain — resolved. Life transformed.*
+
+> "I started working with Fern in January 2026, at a time when I genuinely felt stuck.
+>
+> For almost four years I had been living with debilitating pain in my feet and legs. It had reached the point where I had stopped working and felt unable to fully step into my own business. I had seen numerous consultants, explored different healing modalities, and searched tirelessly for answers, but nothing seemed to help.
+>
+> We began working together straight away, and what happened in that first session was something I never expected. I connected with emotions surrounding a major event in my life that I had never been able to access before. Over the following weeks we continued exploring what felt like a deep abandonment wound. As this work unfolded, something remarkable happened: the pain that had lived in my feet and legs for years gradually disappeared.
+>
+> Today, I can honestly say I move through life with far more confidence, clarity and self-trust than I ever thought possible. The constant rumination and overthinking that once dominated my mind have softened. The inner noise has quietened, and my own inner guidance has become so much clearer.
+>
+> What I appreciate most about Fern is not just the techniques she uses — whether it's TFT, Psych-K or anything else — but the honesty, presence, wisdom and genuine care she brings to every session. Fern, thank you for your light, your compassion, and for creating a space where I could meet parts of myself I never knew were waiting to be seen."
 
 ---
 
@@ -60,9 +75,21 @@
 
 ---
 
-**F Donohoe**
-*Deep emotional release*
-> "I felt a powerful emotional release — like attending a Dr. Joe Dispenza advanced retreat."
+**F Donohoe, 34 — Ireland**
+*TFT sessions · Emotional patterns released · Inner peace found*
+> "I have been working with Fern over the past few years, and she has helped me work through so much of my inner world with compassion, patience and genuine care. Through our TFT sessions and her supportive approach, I've been able to understand myself on a much deeper level, process difficult emotions, and let go of patterns that were holding me back.
+>
+> This has had a profound positive impact on my wellbeing. I feel calmer, more grounded, more resilient, and more at peace. The work hasn't always been easy, but Fern creates a safe, non-judgmental space where I always feel supported.
+>
+> I'm incredibly grateful to Fern for all of her guidance over the years. I couldn't recommend her highly enough."
+
+---
+
+**Cat Cousins**
+*A consistent inner steadiness she had never felt before*
+> "Since working with Fern I feel a consistent steadiness within myself that I've never had before. She weaves together wisdom and various techniques to allow us to come home to the deeper truth and peace within ourselves. No matter what storms life has thrown my way, Fern has provided a safe, non-judgmental space to allow me to navigate the waves with grace and perspective.
+>
+> Fern compassionately guides me beyond the human stories and victim loops to reach a deeper level of consciousness. I am eternally grateful that our paths aligned and would not hesitate to recommend Fern to anyone on a journey with the self."
 
 ---
 
@@ -123,9 +150,9 @@
 
 ## Pending Add-Ons
 
-- [ ] Google Reviews embed (once Google Business Profile is set up — see TASKS.md)
+- [ ] Google Reviews embed (once Google Business Profile is set up)
 - [ ] Client photos or initials avatars for top testimonials
-- [ ] Video testimonials (reach out to Stella Eyers, Louise Todd, Camera Layden-Tapp)
+- [ ] Video testimonials (Paul and Cat Cousins would be especially compelling candidates)
 
 ---
 

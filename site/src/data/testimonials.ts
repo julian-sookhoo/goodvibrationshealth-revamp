@@ -1,5 +1,15 @@
 export const TESTIMONIALS = [
   {
+    key: 'paul-belfast',
+    name: 'Paul',
+    location: 'Belfast, Ireland',
+    result: '4 years of debilitating pain — gone. Confidence, clarity and self-trust restored.',
+    quote: "For almost four years I lived with debilitating pain in my feet and legs — I had stopped working and searched tirelessly for answers. What happened in my first session with Fern was something I never expected. Over the following weeks, the pain that had lived in my feet and legs for years gradually disappeared. Today I move through life with more confidence, clarity and self-trust than I ever thought possible. The constant rumination and overthinking that once dominated my mind have softened. I couldn't be more grateful.",
+    services: ['thought-field-therapy', 'psych-k'],
+    conditions: ['chronic-pain', 'life-direction', 'anxiety-stress'],
+    featured: true,
+  },
+  {
     key: 'stella-eyers',
     name: 'Stella Eyers',
     location: 'Innisfil, ON',
@@ -27,7 +37,7 @@ export const TESTIMONIALS = [
     quote: 'My lower back pain went from 8 out of 10 to 0 within 2 minutes of the tapping sequence.',
     services: ['thought-field-therapy'],
     conditions: ['chronic-pain'],
-    featured: true,
+    featured: false,
   },
   {
     key: 'diana-b',
@@ -42,11 +52,21 @@ export const TESTIMONIALS = [
   {
     key: 'f-donohoe',
     name: 'F Donohoe',
+    location: 'Ireland',
+    result: 'Calmer, more grounded, more resilient — patterns released through TFT',
+    quote: "I've been able to understand myself on a much deeper level, process difficult emotions, and let go of patterns that were holding me back. I feel calmer, more grounded, more resilient, and more at peace. The work hasn't always been easy, but Fern creates a safe, non-judgmental space where I always feel supported. I couldn't recommend her highly enough.",
+    services: ['thought-field-therapy'],
+    conditions: ['anxiety-stress', 'life-direction'],
+    featured: false,
+  },
+  {
+    key: 'cat-cousins',
+    name: 'Cat Cousins',
     location: '',
-    result: 'Deep emotional release',
-    quote: 'I felt a powerful emotional release — like attending a Dr. Joe Dispenza advanced retreat.',
-    services: ['hypnosis'],
-    conditions: ['anxiety-stress'],
+    result: 'A consistent inner steadiness she had never felt before',
+    quote: "Since working with Fern I feel a consistent steadiness within myself that I've never had before. She weaves together wisdom and various techniques to allow us to come home to the deeper truth and peace within ourselves. No matter what storms life has thrown my way, Fern has provided a safe, non-judgmental space to allow me to navigate the waves with grace and perspective. I am eternally grateful that our paths aligned and would not hesitate to recommend Fern to anyone on a journey with the self.",
+    services: ['life-coaching', 'psych-k'],
+    conditions: ['life-direction', 'anxiety-stress'],
     featured: false,
   },
   {
