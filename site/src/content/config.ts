@@ -6,7 +6,7 @@ const services = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    category: z.enum(['mind-belief', 'body-energy', 'coaching', 'vibrational']),
+    category: z.enum(['non-duality', 'mind-belief', 'body-energy', 'coaching']),
     headline: z.string(),
     description: z.string(),
     isBookable: z.boolean().default(true),

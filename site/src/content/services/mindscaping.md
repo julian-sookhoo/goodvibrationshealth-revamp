@@ -6,8 +6,8 @@ description: "Mindscaping uses metaphor and imagery to work directly with the un
 isBookable: true
 conditions: ["anxiety-stress", "fears-phobias", "life-direction"]
 order: 3
-metaTitle: "Mindscaping Therapy Online — Canada"
-metaDescription: "Mindscaping sessions with Fern Wolf, trained directly under Mike Mandel. Content-free emotional shifts — you never have to disclose the issue. Virtual, Canada-wide."
+metaTitle: "Mindscaping Therapy Online — Worldwide"
+metaDescription: "Mindscaping sessions with Fern Wolf, trained directly under Mike Mandel. Content-free emotional shifts — you never have to disclose the issue. Virtual, worldwide."
 faqs:
   - q: "Do I really not have to tell you what my problem is?"
     a: "Correct. The content-free option is genuine. Fern will guide you through a metaphorical process, and the change happens in the unconscious mind without the conscious mind needing to identify or explain the root cause."

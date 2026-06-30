@@ -2,11 +2,11 @@
 title: "Chronic Pain"
 headline: "Chronic Pain That Won't Respond to Treatment — There's Another Way"
 description: "Pain that won't respond to treatment. Physical symptoms with no clear cause."
-primaryServices: ["thought-field-therapy", "bio-well"]
-secondaryServices: ["hypnosis", "source-energy-medicine", "hado"]
+primaryServices: ["thought-field-therapy"]
+secondaryServices: ["hypnosis", "psych-k"]
 featuredTestimonial: "louise-todd"
 targetKeyword: "natural chronic pain relief Canada"
-metaTitle: "Natural Chronic Pain Relief — Virtual Canada"
+metaTitle: "Natural Chronic Pain Relief — Virtual Worldwide"
 metaDescription: "TFT tapping and holistic approaches for chronic pain. Specific, measurable results. Virtual sessions with Fern Wolf. Book a free 30-minute discovery call."
 ---
 

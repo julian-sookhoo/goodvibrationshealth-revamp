@@ -6,8 +6,8 @@ description: "Neuro-Linguistic Programming works at the intersection of thought,
 isBookable: true
 conditions: ["anxiety-stress", "fears-phobias", "weight-habits", "life-direction"]
 order: 2
-metaTitle: "NLP Practitioner Online — Canada"
-metaDescription: "Certified NLP practitioner Fern Wolf offers virtual sessions across Canada. Confidence, phobias, habits, mood, communication. Book a free discovery call."
+metaTitle: "NLP Practitioner Online — Worldwide"
+metaDescription: "Certified NLP practitioner Fern Wolf offers virtual sessions worldwide. Confidence, phobias, habits, mood, communication. Book a free discovery call."
 faqs:
   - q: "How is NLP different from therapy?"
     a: "NLP focuses on how you're thinking and responding right now, rather than extensively exploring the past. It's solution-focused and typically produces changes faster than traditional talk therapy."

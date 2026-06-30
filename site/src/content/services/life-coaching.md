@@ -6,8 +6,8 @@ description: "Values-driven, holistic coaching that helps you get clear on who y
 isBookable: true
 conditions: ["life-direction", "weight-habits"]
 order: 1
-metaTitle: "Holistic Life Coach Online — Canada"
-metaDescription: "Holistic life coaching with Fern Wolf. Goal-focused, values-driven sessions for life direction, relationships, confidence, and lasting change. Virtual, Canada-wide."
+metaTitle: "Holistic Life Coach Online — Worldwide"
+metaDescription: "Holistic life coaching with Fern Wolf. Goal-focused, values-driven sessions for life direction, relationships, confidence, and lasting change. Virtual, worldwide."
 faqs:
   - q: "How is coaching different from therapy?"
     a: "Coaching is forward-focused — it's about building your future, not processing your past. While it may touch on past patterns or emotions, the primary orientation is where you're going and how to get there."

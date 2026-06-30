@@ -6,8 +6,8 @@ description: "Psych-K rewrites limiting beliefs at the subconscious level using 
 isBookable: true
 conditions: ["anxiety-stress", "life-direction", "weight-habits"]
 order: 1
-metaTitle: "Psych-K Practitioner Online — Canada"
-metaDescription: "Advanced Psych-K sessions with Fern Wolf. Rewrite limiting beliefs at the subconscious level. Virtual, Canada-wide. Book a free 30-minute discovery call."
+metaTitle: "Psych-K Practitioner Online — Worldwide"
+metaDescription: "Advanced Psych-K sessions with Fern Wolf. Rewrite limiting beliefs at the subconscious level. Virtual, worldwide. Book a free 30-minute discovery call."
 faqs:
   - q: "What is muscle testing?"
     a: "Muscle testing (applied kinesiology) is a technique that uses the body's neurological responses to identify which beliefs are held at the subconscious level and to confirm when a change has been integrated. Fern is a certified Expert Muscle Tester."

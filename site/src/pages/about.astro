@@ -8,24 +8,22 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: SITE.practitioner,
-  jobTitle: 'Holistic Health Practitioner',
+  jobTitle: 'Non-Duality Coach & Holistic Health Practitioner',
   url: `${SITE.url}/about/`,
   telephone: `+${SITE.phone.replace(/[^0-9]/g, '')}`,
   email: SITE.email,
   worksFor: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-  description: 'Fern Wolf has been helping people reclaim their health, break limiting patterns, and live with more ease since 1999. 15 certifications, trained by the founders of TFT, HADO & Psych-K.',
+  description: 'Fern Wolf has helped clients worldwide since 1999, using non-duality as a foundation to release limiting beliefs, trauma, and pain. 15 certifications, trained directly by the founders of TFT and Psych-K.',
   hasCredential: [
     'Certified Hypnotist — National Guild of Hypnotists',
     'TFT Advanced Tapping Facilitator & Instructor (cert. 2013)',
     'Psych-K Advanced Practitioner (Basic & Advanced, 2005)',
     'Certified NLP Practitioner',
     'Mindscaping Specialist — trained by Mike Mandel',
-    'Hado Instructor — trained by Dr. Masaru Emoto',
-    'Source Energy Medicine Practitioner — Canadian Representative',
   ],
   knowsAbout: [
-    'Thought Field Therapy', 'Hypnosis', 'Psych-K', 'NLP',
-    'Mindscaping', 'Life Coaching', 'Source Energy Medicine', 'HADO',
+    'Non-Duality Coaching', 'Thought Field Therapy', 'Hypnosis', 'Psych-K',
+    'NLP', 'Mindscaping', 'Holistic Life Coaching',
   ],
 }
 
@@ -49,7 +47,7 @@ const credentials = [
 ---
 
 <BaseLayout
-  title="About Fern Wolf — Holistic Health Practitioner"
+  title="About Fern Wolf — Non-Duality Coach & Holistic Health Practitioner"
   description="Fern Wolf has helped clients worldwide since 1999 — using non-duality as a foundation to release limiting beliefs, trauma, and pain. 15 certifications. Virtual sessions available globally."
   schema={personSchema}
 >
@@ -115,7 +113,7 @@ const credentials = [
     <div class="container-content max-w-narrow">
       <h2 class="font-heading font-semibold text-3xl text-charcoal-900 mb-6">25+ years of results</h2>
       <div class="prose-gv">
-        <p>I've been working with clients since 1999 — first in Georgetown, Ontario, and now virtually from Toronto, serving clients across Canada. Over those decades I've completed 15 certifications, trained directly under the founders of several of the modalities I use, and attended three advanced retreats with Dr. Joe Dispenza.</p>
+        <p>I've been working with clients since 1999 — first in Georgetown, Ontario, and now virtually from Toronto, serving clients worldwide. Over those decades I've completed 15 certifications, trained directly under the founders of several of the modalities I use, and attended three advanced retreats with Dr. Joe Dispenza.</p>
         <p>My results aren't theoretical. They're in the stories my clients share — pain gone in minutes, sleep restored after years of insomnia, long-standing emotional wounds finally released.</p>
       </div>
     </div>

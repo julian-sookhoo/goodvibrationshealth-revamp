@@ -1,5 +1,11 @@
 export const NAV_SERVICES = [
   {
+    group: 'Non-Duality Coaching',
+    items: [
+      { label: 'Non-Duality Coaching', href: '/services/#non-duality' },
+    ],
+  },
+  {
     group: 'Mind & Belief Change',
     items: [
       { label: 'Psych-K',       href: '/services/psych-k/' },
@@ -12,21 +18,12 @@ export const NAV_SERVICES = [
     group: 'Body & Energy',
     items: [
       { label: 'Thought Field Therapy', href: '/services/thought-field-therapy/' },
-      { label: 'Bio-Well',              href: '/services/bio-well/' },
     ],
   },
   {
-    group: 'Coaching & Life',
+    group: 'Coaching & Life Transformation',
     items: [
       { label: 'Life Coaching', href: '/services/life-coaching/' },
-    ],
-  },
-  {
-    group: 'Vibrational Wellness',
-    items: [
-      { label: 'Source Energy Medicine', href: '/services/source-energy-medicine/' },
-      { label: 'HADO',                   href: '/services/hado/' },
-      { label: 'WAVE',                   href: '/services/wave/' },
     ],
   },
 ]
@@ -47,8 +44,4 @@ export const ALL_SERVICES = [
   { label: 'NLP',                    href: '/services/nlp/' },
   { label: 'Mindscaping',            href: '/services/mindscaping/' },
   { label: 'Life Coaching',          href: '/services/life-coaching/' },
-  { label: 'Source Energy Medicine', href: '/services/source-energy-medicine/' },
-  { label: 'HADO',                   href: '/services/hado/' },
-  { label: 'WAVE',                   href: '/services/wave/' },
-  { label: 'Bio-Well',               href: '/services/bio-well/' },
 ]

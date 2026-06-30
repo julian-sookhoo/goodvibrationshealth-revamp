@@ -6,8 +6,8 @@ description: "Drug-free meridian tapping that neutralizes anxiety, pain, trauma,
 isBookable: true
 conditions: ["chronic-pain", "anxiety-stress", "fears-phobias", "sleep"]
 order: 1
-metaTitle: "Thought Field Therapy (TFT) Online — Canada"
-metaDescription: "TFT tapping practitioner Fern Wolf offers virtual sessions across Canada. Rapid relief for anxiety, pain, trauma & phobias. Book a free discovery call."
+metaTitle: "Thought Field Therapy (TFT) Online — Worldwide"
+metaDescription: "TFT tapping practitioner Fern Wolf offers virtual sessions worldwide. Rapid relief for anxiety, pain, trauma & phobias. Book a free discovery call."
 faqs:
   - q: "Do I have to talk about the details of my trauma or issue?"
     a: "No. TFT requires you to think about the issue, but you don't need to verbalize or describe what it is. The technique works without disclosure."
@@ -56,7 +56,7 @@ Sessions are conducted virtually via video call or phone.
 
 Fern also teaches TFT publicly:
 
-- **TFT Certificate Algorithm Course** — Online via Zoom · $180 CAD · Approx. 6 hours · Contact for next available date
-- **Free Monthly Introduction to TFT Tapping** — First Tuesday of each month · 12:30–1:30pm EST
+- **TFT Certificate Algorithm Course** — Online via Zoom · $220 CAD · Approx. 6 hours · Contact for next available date
+- **Group Tapping Sessions** — For grief, trauma, anxiety, and stress · Online via Zoom · Nominal fee
 
 [Learn more about training →](/training/)

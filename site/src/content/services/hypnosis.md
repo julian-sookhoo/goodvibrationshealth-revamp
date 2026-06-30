@@ -6,7 +6,7 @@ description: "Clinical hypnosis using the Simpson Protocol — a gentle, collabo
 isBookable: true
 conditions: ["anxiety-stress", "weight-habits", "fears-phobias", "sleep"]
 order: 4
-metaTitle: "Online Hypnotherapy Canada — Anxiety, Weight & More"
+metaTitle: "Online Hypnotherapy Worldwide — Anxiety, Weight & More"
 metaDescription: "Virtual hypnosis sessions with certified hypnotist Fern Wolf. Simpson Protocol. Weight, sleep, anxiety, phobias & more. Book a free 30-minute discovery call."
 faqs:
   - q: "Will I be 'under' and unaware of what's happening?"

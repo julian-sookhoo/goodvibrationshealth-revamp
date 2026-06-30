@@ -59,4 +59,4 @@ If you've been carrying something that hasn't responded to other approaches, TFT
 
 ---
 
-Want to experience TFT before committing to a session? Join the **free monthly Introduction to TFT Tapping** — first Tuesday of every month, 12:30–1:30pm EST via Zoom. [Contact Fern to register.](mailto:fernmwolf@gmail.com?subject=TFT%20Intro%20Session%20Registration)
+Want to experience TFT in a supported setting? Fern offers **group tapping sessions** for grief, trauma, anxiety, and stress, held online via Zoom for a nominal fee. [Contact Fern to enquire about upcoming sessions.](mailto:fernmwolf@gmail.com?subject=Group%20Tapping%20Session%20Enquiry) You can also [book a 1:1 session](/book/) any time.

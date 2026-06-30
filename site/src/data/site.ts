@@ -5,7 +5,7 @@ export const SITE = {
   email: 'fernmwolf@gmail.com',
   phone: '1-905-702-4511',
   location: 'Toronto, Ontario',
-  serviceArea: 'Virtual appointments across Canada',
+  serviceArea: 'Virtual appointments worldwide',
   url: 'https://goodvibrationshealth.ca',
   social: {
     facebook: 'https://www.facebook.com/goodvibrationshealth4u',
