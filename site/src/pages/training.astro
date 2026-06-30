@@ -5,7 +5,7 @@ import { SITE } from '../data/site'
 
 <BaseLayout
   title="Training & Speaking — Good Vibrations Health"
-  description="TFT Certificate Algorithm Course, free monthly TFT intro sessions, and speaking engagements with Fern Wolf. Virtual training available across Canada."
+  description="TFT Certificate Algorithm Course, group tapping sessions for grief and trauma, and speaking engagements with Fern Wolf. Virtual training available worldwide."
 >
   <!-- Hero -->
   <section class="bg-cream-200 py-14 lg:py-20">
@@ -36,7 +36,7 @@ import { SITE } from '../data/site'
           {[
             { label: 'Format', value: 'Online via Zoom' },
             { label: 'Duration', value: '~6 hours (10:30am–4:30pm)' },
-            { label: 'Cost', value: '$180 CAD' },
+            { label: 'Cost', value: '$220 CAD' },
             { label: 'Certificate', value: 'Included upon completion' },
           ].map(item => (
             <div>
@@ -54,20 +54,20 @@ import { SITE } from '../data/site'
         </a>
       </div>
 
-      <!-- Free Monthly Intro -->
+      <!-- Group Tapping Sessions -->
       <div class="bg-cream-200 rounded-xl p-8 border border-cream-300">
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-terra-400 text-white text-xs font-semibold px-3 py-1 rounded-full">Free (donations optional)</span>
-          <span class="bg-cream-100 text-charcoal-600 text-xs font-semibold px-3 py-1 rounded-full border border-cream-300">Monthly</span>
+          <span class="bg-terra-400 text-white text-xs font-semibold px-3 py-1 rounded-full">Nominal fee</span>
+          <span class="bg-cream-100 text-charcoal-600 text-xs font-semibold px-3 py-1 rounded-full border border-cream-300">Online via Zoom</span>
         </div>
-        <h3 class="font-heading font-semibold text-2xl text-charcoal-900 mb-2">Free Monthly Introduction to TFT Tapping</h3>
-        <p class="text-charcoal-700 mb-6">A one-hour introduction to Thought Field Therapy — completely free, held every month. This is the lowest-risk way to experience TFT firsthand and decide if you'd like to explore further.</p>
+        <h3 class="font-heading font-semibold text-2xl text-charcoal-900 mb-2">Group Tapping Sessions</h3>
+        <p class="text-charcoal-700 mb-6">One-hour group sessions using Thought Field Therapy tapping to gently soften grief, trauma, anxiety, and stress. A supported, compassionate space for collective healing — whether you're carrying fresh loss or long-held pain. Fern has worked with grief groups in the past, including supporting widows navigating life after loss.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {[
             { label: 'Format', value: 'Online via Zoom' },
-            { label: 'Frequency', value: 'First Tuesday of every month' },
-            { label: 'Time', value: '12:30–1:30pm EST' },
-            { label: 'Cost', value: 'Free (donations optional)' },
+            { label: 'Duration', value: '1 hour' },
+            { label: 'Focus areas', value: 'Grief · Trauma · Anxiety · Stress' },
+            { label: 'Cost', value: 'Nominal fee (enquire)' },
           ].map(item => (
             <div>
               <p class="text-xs font-semibold text-charcoal-500 uppercase tracking-wider">{item.label}</p>
@@ -76,10 +76,10 @@ import { SITE } from '../data/site'
           ))}
         </div>
         <a
-          href={`mailto:${SITE.email}?subject=${encodeURIComponent('Free Monthly TFT Intro — Registration')}`}
+          href={`mailto:${SITE.email}?subject=${encodeURIComponent('Group Tapping Session — Enquiry')}`}
           class="inline-flex items-center bg-terra-400 hover:bg-terra-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
         >
-          Register for Next Session →
+          Enquire about upcoming sessions →
         </a>
       </div>
     </div>

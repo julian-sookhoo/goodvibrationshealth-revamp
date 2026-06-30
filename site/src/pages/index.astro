@@ -7,6 +7,7 @@ import FeaturedTestimonials from '../components/sections/FeaturedTestimonials.as
 import MeetFern from '../components/sections/MeetFern.astro'
 import ServiceCategories from '../components/sections/ServiceCategories.astro'
 import CTABanner from '../components/sections/CTABanner.astro'
+import OceanQuote from '../components/sections/OceanQuote.astro'
 
 const schema = {
   '@context': 'https://schema.org',
@@ -22,10 +23,11 @@ const schema = {
 
 <BaseLayout
   title="Feel Better. Think Clearer. Live With Less Pain."
-  description="Virtual holistic health services across Canada. TFT tapping, hypnosis, life coaching, NLP & more with Fern Wolf — 25+ years, 15 certifications. Book a free discovery call."
+  description="Non-duality coaching, TFT tapping, hypnosis & holistic healing with Fern Wolf — helping people worldwide release limiting beliefs, trauma, and anxiety to live as their true nature. Book a free discovery call."
   schema={schema}
 >
   <Hero />
+  <OceanQuote />
   <IsThisYou />
   <HowItWorks />
   <FeaturedTestimonials />
